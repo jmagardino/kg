@@ -55,7 +55,7 @@ select {
 /* Headers */
 header {
   width: 100%;
-  background: #fdfdfd;
+  background: #003366;
   border-bottom: 1px solid #eaeaea;
   margin-bottom: 2rem;
 }
@@ -95,7 +95,7 @@ header nav a {
     margin: 1rem;
   }
   .phx-logo {
-    flex-basis: 527px;
-    margin: 2rem 1rem;
+    flex-basis: 100px;
+    margin: 1rem 1rem;
   }
 }
