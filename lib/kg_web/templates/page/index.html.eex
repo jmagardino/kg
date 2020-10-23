@@ -1,4 +1,6 @@
 <section>
-  <h1><%= gettext "Welcome to %{name}!", name: "KG Ranch" %></h1>
-  <p>A place to buy all of your eggs and check out our farm camp!</p>
+  <div class="jumbotron">
+    <h1><%= gettext "Welcome to %{name}!", name: "KG Ranch" %></h1>
+    <p>A place to buy all of your eggs and check out our farm camp!</p>
+  </div>
 </section>
