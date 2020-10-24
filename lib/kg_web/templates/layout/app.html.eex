@@ -23,6 +23,7 @@
               <a class="nav-item nav-link" href="#">Camp</a>
               <a class="nav-item nav-link" href="#">Cattle</a>
           </div>
+          <%= render "_user_menu.html", assigns %>
       </div>
     </nav>
   </header>

@@ -1,0 +1,10 @@
+<ul class="navbar-nav ml-auto navbar-dark">
+<%= if @current_user do %>
+  <%= link "Settings", to: Routes.user_settings_path(@conn, :edit), class: "nav-item nav-link" %>
+  <%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete, class: "nav-item nav-link" %>
+  <span class="navbar-text"><%= @current_user.email %></span>
+<% else %>
+  <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "nav-item nav-link" %>
+  <%= link "Log in", to: Routes.user_session_path(@conn, :new), class: "nav-item nav-link" %>
+<% end %>
+</ul>
