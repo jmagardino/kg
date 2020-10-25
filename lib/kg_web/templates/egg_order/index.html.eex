@@ -1,0 +1,34 @@
+<h1>Listing Egg orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer Email</th>
+      <th>Quantity</th>
+      <th>Paid at</th>
+      <th>Completed at</th>
+      <th>Is delivery</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for egg_order <- @egg_orders do %>
+    <tr>
+      <td><%= egg_order.user.email %></td>
+      <td><%= egg_order.quantity %></td>
+      <td><%= egg_order.paid_at %></td>
+      <td><%= egg_order.completed_at %></td>
+      <td><%= egg_order.is_delivery %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.egg_order_path(@conn, :show, egg_order) %></span>
+        <span><%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
+        <span><%= link "Delete", to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Egg order", to: Routes.egg_order_path(@conn, :new) %></span>

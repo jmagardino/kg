@@ -1,0 +1,5 @@
+<h1>Edit Egg order</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.egg_order_path(@conn, :update, @egg_order)) %>
+
+<span><%= link "Back", to: Routes.egg_order_path(@conn, :index) %></span>

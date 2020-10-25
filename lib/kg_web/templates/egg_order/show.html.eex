@@ -1,0 +1,28 @@
+<h1>Show Egg order</h1>
+
+<ul>
+
+  <li>
+    <strong>Quantity:</strong>
+    <%= @egg_order.quantity %>
+  </li>
+
+  <li>
+    <strong>Paid at:</strong>
+    <%= @egg_order.paid_at %>
+  </li>
+
+  <li>
+    <strong>Completed at:</strong>
+    <%= @egg_order.completed_at %>
+  </li>
+
+  <li>
+    <strong>Is delivery:</strong>
+    <%= @egg_order.is_delivery %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.egg_order_path(@conn, :edit, @egg_order) %></span>
+<span><%= link "Back", to: Routes.egg_order_path(@conn, :index) %></span>

@@ -19,6 +19,7 @@
       </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
+              <%= link "Eggs", to: Routes.egg_order_path(@conn, :index), class: "nav-item nav-link" %>
               <a class="nav-item nav-link" href="#">Eggs</a>
               <a class="nav-item nav-link" href="#">Camp</a>
               <a class="nav-item nav-link" href="#">Cattle</a>
