@@ -1,15 +1,14 @@
-<h1>Listing Egg orders</h1>
+<h1>Egg orders</h1>
 
-<table>
+<table class = "table">
   <thead>
     <tr>
-      <th>Customer Email</th>
+      <th>Email</th>
       <th>Quantity</th>
+      <th>Delivery?</th>
       <th>Paid at</th>
       <th>Completed at</th>
-      <th>Is delivery</th>
-
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -17,18 +16,17 @@
     <tr>
       <td><%= egg_order.user.email %></td>
       <td><%= egg_order.quantity %></td>
+      <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
       <td><%= egg_order.paid_at %></td>
       <td><%= egg_order.completed_at %></td>
-      <td><%= egg_order.is_delivery %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.egg_order_path(@conn, :show, egg_order) %></span>
-        <span><%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
-        <span><%= link "Delete", to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link raw(~s' <i class="fa fa-edit"></i>'), to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
+        <span><%= link raw(~s' <i class="fa fa-trash"></i>'),  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Egg order", to: Routes.egg_order_path(@conn, :new) %></span>
+<%= link "New Egg order", to: Routes.egg_order_path(@conn, :new), class: "btn btn-primary" %>
