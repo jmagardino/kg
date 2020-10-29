@@ -5,7 +5,9 @@ defmodule KgWeb.EggOrderController do
   alias Kg.EggOrders.EggOrder
 
   def index(conn, _params) do
-    egg_orders = EggOrders.list_egg_orders()
+    user_id = conn.assigns.current_user.id
+
+    egg_orders = EggOrders.list_egg_orders_for_user(user_id)
     render(conn, "index.html", egg_orders: egg_orders)
   end
 

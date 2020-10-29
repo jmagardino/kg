@@ -32,6 +32,20 @@ defmodule Kg.EggOrdersTest do
       assert created_egg_order.quantity == egg_order.quantity
     end
 
+    test "list_egg_orders_for_user/1 returns all egg_orders for a specific user with user information" do
+      egg_order = egg_order_fixture()
+      user_id = egg_order.user_id
+
+      [created_egg_order] = EggOrders.list_egg_orders_for_user(user_id)
+
+      assert created_egg_order.id == egg_order.id
+      assert created_egg_order.is_delivery == egg_order.is_delivery
+      assert created_egg_order.paid_at == egg_order.paid_at
+      assert created_egg_order.quantity == egg_order.quantity
+
+      [] = EggOrders.list_egg_orders_for_user(1000)
+    end
+
     test "get_egg_order!/1 returns the egg_order with given id" do
       egg_order = egg_order_fixture()
       assert EggOrders.get_egg_order!(egg_order.id) == egg_order
