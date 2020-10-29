@@ -25,6 +25,22 @@ defmodule Kg.EggOrders do
   end
 
   @doc """
+  Returns the list of egg_orders belonging to a specific account
+
+  ## Examples
+
+      iex> list_egg_orders()
+      [%EggOrder{}, ...]
+
+  """
+  def list_egg_orders_for_user(user_id) do
+    query = from eo in EggOrder, where: eo.user_id == ^user_id
+
+    Repo.all(query)
+    |> Repo.preload(:user)
+  end
+
+  @doc """
   Gets a single egg_order.
 
   Raises `Ecto.NoResultsError` if the Egg order does not exist.
