@@ -29,7 +29,7 @@ defmodule Kg.EggOrders do
 
   ## Examples
 
-      iex> list_egg_orders()
+      iex> list_egg_orders_for_user(1)
       [%EggOrder{}, ...]
 
   """
