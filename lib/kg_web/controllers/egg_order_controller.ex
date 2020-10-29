@@ -17,6 +17,11 @@ defmodule KgWeb.EggOrderController do
   def create(conn, %{"egg_order" => egg_order_params}) do
     user = conn.assigns.current_user
 
+    egg_order_params =
+      egg_order_params
+      |> Map.put("paid_at", nil)
+      |> Map.put("completed_at", nil)
+
     case EggOrders.create_egg_order(egg_order_params, user) do
       {:ok, egg_order} ->
         conn

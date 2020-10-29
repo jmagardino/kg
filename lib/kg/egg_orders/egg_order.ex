@@ -18,6 +18,6 @@ defmodule Kg.EggOrders.EggOrder do
   def changeset(egg_order, attrs) do
     egg_order
     |> cast(attrs, [:quantity, :paid_at, :completed_at, :is_delivery])
-    |> validate_required([:quantity, :paid_at, :completed_at, :is_delivery])
+    |> validate_required([:quantity, :is_delivery])
   end
 end

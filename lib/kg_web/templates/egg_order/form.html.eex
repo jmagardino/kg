@@ -4,24 +4,22 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
-
-  <%= label f, :quantity %>
-  <%= number_input f, :quantity %>
-  <%= error_tag f, :quantity %>
-
-  <%= label f, :paid_at %>
-  <%= datetime_select f, :paid_at %>
-  <%= error_tag f, :paid_at %>
-
-  <%= label f, :completed_at %>
-  <%= datetime_select f, :completed_at %>
-  <%= error_tag f, :completed_at %>
-
-  <%= label f, :is_delivery %>
-  <%= checkbox f, :is_delivery %>
-  <%= error_tag f, :is_delivery %>
+  <div class="form-group form-inline">
+    <div class="col-xs-2">
+      <%= label f, :quantity, "Quantity (Dozen)" %>
+      <%= number_input f, :quantity, type: "number", class: "form-control", min: "0", max: "9", step: 1%>
+      <%= error_tag f, :quantity %>
+    </div>
+  </div>
+  <div class="form-group form-inline">
+    <div class="col-xs-2">
+      <%= label f, :is_delivery, "Check for Delivery" %>
+      <%= checkbox f, :is_delivery, type: "checkbox" %>
+      <%= error_tag f, :is_delivery %>
+    </div>
+  </div>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

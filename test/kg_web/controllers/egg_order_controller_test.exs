@@ -28,7 +28,7 @@ defmodule KgWeb.EggOrderControllerTest do
   describe "new egg_order" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.egg_order_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Egg order"
+      assert html_response(conn, 200) =~ "Order Your Eggs"
     end
   end
 
@@ -40,12 +40,27 @@ defmodule KgWeb.EggOrderControllerTest do
       assert redirected_to(conn) == Routes.egg_order_path(conn, :show, id)
 
       conn = get(conn, Routes.egg_order_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Egg order"
+      assert html_response(conn, 200) =~ "KG Egg Order"
+    end
+
+    test "allows the paid_at and completed_at values to be empty on create", %{conn: conn} do
+      attrs =
+        @create_attrs
+        |> Map.delete("paid_at")
+        |> Map.delete("completed_at")
+
+      conn = post(conn, Routes.egg_order_path(conn, :create), egg_order: attrs)
+
+      assert %{id: id} = redirected_params(conn)
+      assert redirected_to(conn) == Routes.egg_order_path(conn, :show, id)
+
+      conn = get(conn, Routes.egg_order_path(conn, :show, id))
+      assert html_response(conn, 200) =~ "KG Egg Order"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.egg_order_path(conn, :create), egg_order: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Egg order"
+      assert html_response(conn, 200) =~ "Order Your Eggs"
     end
   end
 
