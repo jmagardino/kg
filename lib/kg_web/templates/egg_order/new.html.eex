@@ -1,5 +1,5 @@
-<h1>New Egg order</h1>
+<h1>Order Your Eggs!</h1>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.egg_order_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.egg_order_path(@conn, :index) %></span>
+<span><%= link "Cancel", to: Routes.egg_order_path(@conn, :index), class: "btn btn-danger" %></span>

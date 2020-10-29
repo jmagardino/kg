@@ -1,28 +1,32 @@
-<h1>Show Egg order</h1>
 
-<ul>
+<h3 class = display-4>Receipt</h3>
 
-  <li>
-    <strong>Quantity:</strong>
-    <%= @egg_order.quantity %>
-  </li>
+  <div class = "jumbotron jumbotron-test">
 
-  <li>
-    <strong>Paid at:</strong>
-    <%= @egg_order.paid_at %>
-  </li>
+  <h1> KG Egg Order </h1>
 
-  <li>
-    <strong>Completed at:</strong>
-    <%= @egg_order.completed_at %>
-  </li>
+  <ul class="list-group">
 
-  <li>
-    <strong>Is delivery:</strong>
-    <%= @egg_order.is_delivery %>
-  </li>
+    <li class="list-group-item">
+      <strong>Customer:</strong>
+      <%= @conn.assigns.current_user.email %>
+    </li>
 
-</ul>
+    <li class="list-group-item">
+      <strong>Ordered:</strong>
+      <%= DateTime.utc_now() %>
+    </li>
 
-<span><%= link "Edit", to: Routes.egg_order_path(@conn, :edit, @egg_order) %></span>
-<span><%= link "Back", to: Routes.egg_order_path(@conn, :index) %></span>
+    <li class="list-group-item">
+      <strong>Quantity:</strong>
+      <%= @egg_order.quantity %> Dozen
+    </li>
+
+    <li class="list-group-item">
+      <strong>Delivery:</strong>
+      <%= if @egg_order.is_delivery do %> Yes <% else %> No <% end %>
+    </li>
+
+  </ul>
+</div>
+<span><%= link "Continue", to: Routes.egg_order_path(@conn, :index), class: "btn btn-primary" %></span>
