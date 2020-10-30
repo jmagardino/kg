@@ -10,8 +10,8 @@ defmodule Kg.Accounts.User do
     field :password, :string, virtual: true
     field :hashed_password, :string
     field :confirmed_at, :naive_datetime
+    field(:roles, {:array, :string}, default: ["customer"])
     has_many :egg_order, EggOrder
-
     timestamps()
   end
 
@@ -80,6 +80,14 @@ defmodule Kg.Accounts.User do
     |> cast(attrs, [:password])
     |> validate_confirmation(:password, message: "does not match password")
     |> validate_password()
+  end
+
+  @doc """
+  A user changeset for changing the role to administrator.
+  """
+  def admin_role_changeset(user) do
+    user
+    |> change(roles: ["administrator"])
   end
 
   @doc """
