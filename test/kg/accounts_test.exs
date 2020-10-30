@@ -93,6 +93,14 @@ defmodule Kg.AccountsTest do
     end
   end
 
+  describe "make_admin_user/1" do
+    test "changes a customers role to administrator" do
+      user = user_fixture()
+      %User{roles: ["customer"]} = user
+      {:ok, %User{roles: ["administrator"]}} = Accounts.make_admin_user(user)
+    end
+  end
+
   describe "change_user_registration/2" do
     test "returns a changeset" do
       assert %Ecto.Changeset{} = changeset = Accounts.change_user_registration(%User{})

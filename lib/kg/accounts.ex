@@ -80,6 +80,25 @@ defmodule Kg.Accounts do
   end
 
   @doc """
+  Makes a user an admin role.
+
+  ## Examples
+
+      iex> make_admin_user(user)
+      {:ok, %User{}}
+
+      iex> make_admin_user(user)
+      {:error, %Ecto.Changeset{}}
+
+  """
+
+  def make_admin_user(%User{} = user) do
+    user
+    |> User.admin_role_changeset()
+    |> Repo.update()
+  end
+
+  @doc """
   Returns an `%Ecto.Changeset{}` for tracking user changes.
 
   ## Examples
