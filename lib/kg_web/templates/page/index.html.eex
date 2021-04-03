@@ -4,3 +4,62 @@
     <p>A place to buy all of your eggs and check out our farm camp!</p>
   </div>
 </section>
+
+<section id="services">
+  <div class="row services">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header services__header">
+          <h3><i class="fas fa-egg fa-lg"></i> Eggs</h3>
+        </div>
+        <div class="card-body text-center">
+          <div class="services__details">
+            <ul>
+              <li>Harvested fresh daily</li>
+              <li>USDA certified Grade A</li>
+            </ul>
+          </div>
+          <button class="btn btn-dark services__button">Place Order</button>
+        </div>
+        <%# <div class="card-footer">
+        </div> %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header services__header">
+          <h3><i class="fas fa-hamburger fa-lg"></i> Beef</h3>
+        </div>
+        <div class="card-body text-center">
+          <div class="services__details">
+            <ul>
+              <li>Premmium Angus</li>
+              <li>Butchered humanely</li>
+            </ul>
+          </div>
+          <button class="btn btn-dark services__button">Place Order</button>
+        </div>
+        <%# <div class="card-footer">
+        </div> %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header services__header">
+          <h3><i class="fas fa-glass-whiskey fa-lg"></i> Milk</h3>
+        </div>
+        <div class="card-body text-center">
+          <div class="services__details">
+            <ul>
+              <li>Squirted fresh daily</li>
+              <li>100% organic heifer breast milk</li>
+            </ul>
+          </div>
+          <button class="btn btn-dark services__button">Place Order</button>
+        </div>
+        <%# <div class="card-footer">
+        </div> %>
+      </div>
+    </div>
+  </div>
+</section>
