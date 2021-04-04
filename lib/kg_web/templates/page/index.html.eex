@@ -25,7 +25,7 @@
                   <li>USDA certified Grade A</li>
                 </ul>
               </div>
-              <button class="btn btn-dark services__button">Place Order</button>
+              <%= link "Place Order", to: Routes.egg_order_path(@conn, :index), class: "btn btn-dark services__button" %>
             </div>
           </div>
         </div>
