@@ -1,6 +1,9 @@
 /* This file is for your main application css. */
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+@import "globals";
+@import "header";
+@import "feature";
 
 /* Alerts and form errors */
 .alert {
@@ -36,7 +39,7 @@
   margin: -1rem 0 2rem;
 }
 
-header { padding-bottom: 10px; }
+// header { padding-bottom: 10px; }
 
 .jumbotron-test {
   font-size: 17px;

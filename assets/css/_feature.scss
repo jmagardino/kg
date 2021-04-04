@@ -1,0 +1,73 @@
+#title {
+    // background-color: white;
+    background-image: url("/images/landscape-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2rem;
+}
+
+.welcome {
+    margin: 5rem 0 7rem 0;
+
+    &__banner {
+        text-align: center;
+        // background-color: rgba(255, 255, 255, 0.8);
+        color: $theme-blue;
+
+        h1 {
+            font-family: "Fondamento", cursive;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        p {
+            font-family: "Quicksand", sans-serif;
+            font-size: 1.1rem;
+            color: white;
+        }
+    }
+}
+
+#features {
+    padding: 0.1rem 1rem 1rem 1rem;
+}
+
+.feature {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $theme-blue;
+
+    h2 {
+        font-family: "Monteserat", sans-serif;
+        font-size: 2.35rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.services {
+
+    &__card {
+        padding: 2rem;
+    }
+
+    &__header {
+        text-align: center;
+        color: $theme-blue;
+    }
+
+    &__details {
+        text-align: left;
+        padding: 1.5rem 0.2rem;
+        color: $theme-blue;
+    }
+
+    &__button {
+        margin: 1.75rem 0.5rem 0.2rem;
+    }
+}
+
+
