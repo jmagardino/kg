@@ -9,7 +9,7 @@
   </section>
 
   <section id="features">
-    <div class="jumbotron feature">
+    <div class="jumbotron feature container">
       <h2>What We Offer</h2>
       <div class="row services">
 
