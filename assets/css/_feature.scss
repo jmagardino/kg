@@ -1,3 +1,5 @@
+// Title Section
+
 #title {
     // background-color: white;
     background-image: url("/images/landscape-1.jpg");
@@ -11,44 +13,256 @@
 .welcome {
     margin: 5rem 0 7rem 0;
 
+    @include media-breakpoint-down(md) {
+        margin: 1rem 0 0.25rem 0;
+    }
+
     &__banner {
         text-align: center;
         // background-color: rgba(255, 255, 255, 0.8);
-        color: $theme-blue;
+        color: $theme-c;
 
         h1 {
             font-family: "Fondamento", cursive;
             font-size: 4rem;
             margin-bottom: 2rem;
             color: white;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 1.85rem;
+            }
         }
 
         p {
-            font-family: "Quicksand", sans-serif;
+            font-family: "Varela Round", sans-serif;
             font-size: 1.1rem;
             color: white;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 1rem;
+            }
         }
     }
 }
 
+
+// Services Section
+
+#services {
+    background-color: $theme-f;
+    padding: 0.1rem 1rem 1rem 1rem;
+}
+
+.services {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    color: $theme-g;
+    padding-top: 4rem;
+    margin: 1rem 12% 2rem;
+
+    @include media-breakpoint-down(sm) {
+        margin: 1rem auto 2rem;
+    }
+
+    h2 {
+        font-family: "Varela Round", sans-serif;
+        font-size: 2.35rem;
+        font-weight: 700;
+        margin-bottom: 4.5rem;
+        color: white;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.7rem;
+            margin-bottom: 0;
+        }
+    }
+
+    h3 {
+        font-weight: bold;
+        color: $theme-h;
+        padding-top: 2rem;
+
+        @include media-breakpoint-down(sm) {
+            padding-top: 0;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 2rem;
+    }
+}
+
+.services-row {
+    margin: auto;
+    text-align: left;
+    padding: 3rem;
+
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
+}
+
+.img-eggs {
+    width: 14rem;
+    border-radius: 50%;
+    float: left;
+    margin: 0 3rem 2rem 0;
+
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto 0;
+        float: left;
+        width: 9rem;
+        margin-right: 1.2rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+}
+
+.img-camp {
+    width: 14rem;
+    border-radius: 50%;
+    float: right;
+    margin: 0 0 2rem 3rem;
+
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto 0;
+        float: left;
+        width: 9rem;
+        margin-right: 1.2rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+}
+
+.img-cattle {
+    width: 14rem;
+    border-radius: 50%;
+    float: left;
+    margin: 0 3rem 2rem 0;
+
+    @include media-breakpoint-down(sm) {
+        margin: 0 auto 0;
+        float: left;
+        width: 9rem;
+        margin-right: 1.2rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+}
+
+.service-heading-eggs {
+    @include media-breakpoint-down(sm) {
+        text-align: left;
+        font-size: 1.4rem;
+        margin: 1.4rem 0 0.9rem 10rem;
+    }
+}
+
+.service-heading-camp {
+    text-align: right;
+
+    @include media-breakpoint-down(sm) {
+        text-align: left;
+        font-size: 1.4rem;
+        margin: 1.4rem 0 0.9rem 10rem;
+    }
+}
+
+.service-heading-cattle {
+    @include media-breakpoint-down(sm) {
+        text-align: left;
+        font-size: 1.4rem;
+        margin: 1.4rem 0 0.9rem 10rem;
+    }
+}
+
+.service-desc-eggs {
+    clear: left;
+    line-height: 2;
+    margin: 0 40% 0 0;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 0.8rem;
+        text-align: left;
+        clear: none;
+        margin: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0;
+    }
+}
+
+.service-desc-camp {
+    clear: right;
+    text-align: right;
+    line-height: 2;
+    margin: 0 0 0 40%;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 0.8rem;
+        text-align: left;
+        clear: none;
+        margin: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0;
+    }
+}
+
+.service-desc-cattle {
+    clear: left;
+    line-height: 2;
+    margin: 0 40% 0 0;
+
+    @include media-breakpoint-down(sm) {
+        font-size: 0.8rem;
+        text-align: left;
+        clear: none;
+        margin: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin: 0;
+    }
+}
+
+
+// Features Section
+
 #features {
     padding: 0.1rem 1rem 1rem 1rem;
+    background-color: $theme-b;
 }
 
 .feature {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: $theme-blue;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    
 
     h2 {
-        font-family: "Monteserat", sans-serif;
+        font-family: "Varela Round", sans-serif;
         font-size: 2.35rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+        }
     }
 }
 
-.services {
+.cta {
 
     &__card {
         padding: 2rem;
@@ -56,18 +270,32 @@
 
     &__header {
         text-align: center;
-        color: $theme-blue;
+        color: $theme-d;
+
+        h3 {
+            margin: 0;
+
+            @include media-breakpoint-down(sm) {
+                font-size: 1.4rem;
+            }
+        }  
+
+        .icon {
+            color: $theme-d;
+            // padding-right: 0.7rem;
+            text-align: left;
+        }
     }
 
     &__details {
         text-align: left;
         padding: 1.5rem 0.2rem;
-        color: $theme-blue;
+        color: $theme-b;
     }
 
     &__button {
         margin: 1.75rem 0.5rem 0.2rem;
     }
-}
 
+}
 
