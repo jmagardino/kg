@@ -46,6 +46,7 @@
 }
 
 
+
 // Services Section
 
 #services {
@@ -57,11 +58,11 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     color: $theme-g;
-    padding-top: 4rem;
-    margin: 1rem 12% 2rem;
+    padding-top: 3rem;
+    margin: 1rem 12% 4rem;
 
-    @include media-breakpoint-down(sm) {
-        margin: 1rem auto 2rem;
+    @include media-breakpoint-down(md) {
+        margin: 1rem auto 0.4rem;
     }
 
     h2 {
@@ -80,7 +81,7 @@
     h3 {
         font-weight: bold;
         color: $theme-h;
-        padding-top: 2rem;
+        padding-top: 5.25rem;
 
         @include media-breakpoint-down(sm) {
             padding-top: 0;
@@ -100,6 +101,7 @@
 
     @include media-breakpoint-down(sm) {
         text-align: center;
+        padding: 3rem 1rem;
     }
 }
 
@@ -109,15 +111,15 @@
     float: left;
     margin: 0 3rem 2rem 0;
 
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+
     @include media-breakpoint-down(sm) {
         margin: 0 auto 0;
         float: left;
         width: 9rem;
         margin-right: 1.2rem;
-    }
-
-    @include media-breakpoint-down(md) {
-        width: 12rem;
     }
 }
 
@@ -127,15 +129,15 @@
     float: right;
     margin: 0 0 2rem 3rem;
 
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+
     @include media-breakpoint-down(sm) {
         margin: 0 auto 0;
         float: left;
         width: 9rem;
         margin-right: 1.2rem;
-    }
-
-    @include media-breakpoint-down(md) {
-        width: 12rem;
     }
 }
 
@@ -145,15 +147,15 @@
     float: left;
     margin: 0 3rem 2rem 0;
 
+    @include media-breakpoint-down(md) {
+        width: 12rem;
+    }
+
     @include media-breakpoint-down(sm) {
         margin: 0 auto 0;
         float: left;
         width: 9rem;
         margin-right: 1.2rem;
-    }
-
-    @include media-breakpoint-down(md) {
-        width: 12rem;
     }
 }
 
@@ -236,10 +238,76 @@
 }
 
 
+
+// Testimonials Section
+
+#testimonials {
+    background-color: $theme-g;
+    padding: 0.1rem 1rem 1rem 1rem;
+    text-align: center;
+    color: $theme-c;
+}
+
+.testimonials {
+    padding-top: 2rem;
+    margin: 1rem 1% 4rem;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        margin-bottom: 3rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.7rem;
+        }
+    }
+
+    h4 {
+        color: $theme-b;
+        margin-bottom: 2.2rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1rem;
+        }
+    }
+
+    em {
+        color: $theme-f;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.carousel-item {
+    padding: 0 20%;
+}
+
+.carousel-control-prev {
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        display: inline-block;
+        margin: 2rem 2rem 0 2rem;
+    }
+}
+
+.carousel-control-next {
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        display: inline-block;
+        margin: 2rem 2rem 0 2rem;
+    }
+}
+
+
+
 // Features Section
 
 #features {
-    padding: 0.1rem 1rem 1rem 1rem;
+    padding: 0 1rem;
     background-color: $theme-b;
 }
 
@@ -247,7 +315,7 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     color: white;
-    
+    margin-bottom: 0;
 
     h2 {
         font-family: "Varela Round", sans-serif;
@@ -260,10 +328,19 @@
             margin-bottom: 1rem;
         }
     }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 3rem;
+    }
 }
 
 .cta {
+    padding-top: 2rem;
 
+    @include media-breakpoint-down(sm) {
+        padding-top: 1rem;
+    }
+    
     &__card {
         padding: 2rem;
     }
@@ -282,20 +359,51 @@
 
         .icon {
             color: $theme-d;
-            // padding-right: 0.7rem;
-            text-align: left;
+            padding: 0.25rem 0.25rem 0 0;  
         }
     }
 
     &__details {
-        text-align: left;
-        padding: 1.5rem 0.2rem;
+        padding: 1.5rem 0.2rem 0.8rem 0.2rem;
         color: $theme-b;
+        height: 100%;
+
+        ul {
+            text-align: left;
+            height: 50%;
+            padding-left: 2rem;
+        }
     }
 
     &__button {
         margin: 1.75rem 0.5rem 0.2rem;
+        text-align: center;
     }
 
 }
+
+.card {
+    height: 100%;
+}
+
+.card-body {
+    height: 14rem;
+}
+
+
+
+// Footer Section
+
+.footer {
+    text-align: center;
+    padding: 0.7em;
+}
+
+.copyright {
+    margin: 0;
+}
+
+
+
+
 
