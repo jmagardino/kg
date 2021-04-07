@@ -9,6 +9,7 @@ defmodule Kg.Accounts.User do
     field :email, :string
     field :first_name, :string
     field :last_name, :string
+    field :address, :string
     field :password, :string, virtual: true
     field :hashed_password, :string
     field :confirmed_at, :naive_datetime
@@ -27,7 +28,7 @@ defmodule Kg.Accounts.User do
   """
   def registration_changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password, :first_name, :last_name])
+    |> cast(attrs, [:email, :password, :address, :first_name, :last_name])
     |> validate_email()
     |> validate_password()
   end
@@ -35,7 +36,7 @@ defmodule Kg.Accounts.User do
   defp validate_email(changeset) do
     changeset
     |> validate_required([:email])
-    |> validate_format(:email, ~r/^[^\s]+@[^\s]+\.+[^\s]+$/, message: "Please enter a valid email")
+    |> validate_format(:email, ~r/^[^\s]+@[^\s]+\.+[^\s]+$/, message: "must have the @ sign and no spaces")
     |> validate_length(:email, max: 160)
     |> unsafe_validate_unique(:email, Kg.Repo)
     |> unique_constraint(:email)
