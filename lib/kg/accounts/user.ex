@@ -6,8 +6,6 @@ defmodule Kg.Accounts.User do
 
   @derive {Inspect, except: [:password]}
   schema "users" do
-    field :first_name, :string
-    field :last_name, :string
     field :email, :string
     field :address, :string
     field :password, :string, virtual: true
