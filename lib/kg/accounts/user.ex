@@ -28,7 +28,7 @@ defmodule Kg.Accounts.User do
   """
   def registration_changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password, :first_name, :last_name])
+    |> cast(attrs, [:email, :password, :first_name, :last_name, :address])
     |> validate_email()
     |> validate_password()
   end
