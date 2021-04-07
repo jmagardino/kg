@@ -9,6 +9,7 @@ defmodule Kg.Accounts.User do
     field :email, :string
     field :first_name, :string
     field :last_name, :string
+    field :address, :string
     field :password, :string, virtual: true
     field :hashed_password, :string
     field :confirmed_at, :naive_datetime
@@ -27,7 +28,11 @@ defmodule Kg.Accounts.User do
   """
   def registration_changeset(user, attrs) do
     user
+<<<<<<< HEAD
     |> cast(attrs, [:email, :password, :first_name, :last_name])
+=======
+    |> cast(attrs, [:email, :password, :address])
+>>>>>>> 0a9e7ac537cee73466e35cd7bda4950ee7e2a793
     |> validate_email()
     |> validate_password()
   end

@@ -100,6 +100,14 @@ defmodule Kg.AccountsTest do
       assert user.email == email
       assert user.first_name == first_name
       assert user.last_name == last_name
+    end
+
+    test "registers users with an address" do
+      email = unique_user_email()
+      address = "38 Falconers Way"
+      {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password(), address: address})
+      assert user.email == email
+      assert user.address == address
       assert is_binary(user.hashed_password)
       assert is_nil(user.confirmed_at)
       assert is_nil(user.password)
