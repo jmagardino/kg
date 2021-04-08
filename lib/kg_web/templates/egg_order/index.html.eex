@@ -1,20 +1,21 @@
-<h1>Egg orders</h1>
+<h1>Your Orders</h1>
+
+<div>
+<h2>Pending</h2>
 
 <table class = "table">
   <thead>
     <tr>
-      <th>Email</th>
       <th>Quantity</th>
       <th>Delivery?</th>
       <th>Paid at</th>
       <th>Completed at</th>
-      <th>Actions</th>
+      <th>Modify Order</th>
     </tr>
   </thead>
   <tbody>
-<%= for egg_order <- @egg_orders do %>
+<%= for egg_order <- pending_egg_orders(@egg_orders) do %>
     <tr>
-      <td><%= egg_order.user.email %></td>
       <td><%= egg_order.quantity %></td>
       <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
       <td><%= egg_order.paid_at %></td>
@@ -28,5 +29,38 @@
 <% end %>
   </tbody>
 </table>
+</div>
+
+
+<div>
+<h2>Completed</h2>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Delivery?</th>
+      <th>Paid at</th>
+      <th>Completed at</th>
+      <th>Modify Order</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for egg_order <- completed_egg_orders(@egg_orders) do %>
+    <tr>
+      <td><%= egg_order.quantity %></td>
+      <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
+      <td><%= egg_order.paid_at %></td>
+      <td><%= egg_order.completed_at %></td>
+
+      <td>
+        <span><%= link raw(~s' <i class="fa fa-edit"></i>'), to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
+        <span><%= link raw(~s' <i class="fa fa-trash"></i>'),  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+</div>
 
 <%= link "New Egg order", to: Routes.egg_order_path(@conn, :new), class: "btn btn-primary" %>
