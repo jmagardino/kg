@@ -42,19 +42,44 @@
     } 
 }
 
-.brand-logo {
+.brand-logo-svg {
     height: 5rem;
-    
+    width: auto;
+    fill: white;
+    // stroke: white;
+    // stroke-width: 0.02rem;
+    // stroke-opacity: 0;
+
     @include media-breakpoint-down(md) {
-        height: 3rem;;
-        // position: relative;
+        height: 3rem;
     }
+
+    transition: fill 200ms ease-in-out, transform 200ms ease-in-out;
+
+    &:hover {
+        fill: $accent-a;
+        // stroke-opacity: 100%;
+        // stroke: white;
+        // stroke-width: 0.02rem;
+        transform: scale(1.02);  
+    } 
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: $theme-h;
     font-size: 1.1rem;
     margin-left: 2rem;
+
+    transition: color 200ms ease-in-out, transform 20ms ease-in-out;
+    
+    &:hover {
+        color: $accent-a;
+        transform: scale(1.05);
+    }
+
+    &:active {
+        color: $theme-d;
+    }
 }
 
 

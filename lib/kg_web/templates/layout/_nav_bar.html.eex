@@ -4,8 +4,9 @@
         <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="modal" data-target="#nav-modal" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <a class="navbar-brand" href="/">
-        <img class="brand-logo" src="<%= Routes.static_path(@conn, "/images/kg.svg") %>" alt="KG Ranch Logo" height="100">
+        <%= PhoenixInlineSvg.Helpers.svg_image(@conn, "kg-opt-no-fill", class: "brand-logo-svg") %>
         </a>
 
             <div class="navbar-nav">
