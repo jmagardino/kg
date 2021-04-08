@@ -56,6 +56,7 @@ defmodule Kg.AccountsTest do
                email: ["can't be blank"]
              } = errors_on(changeset)
     end
+  end
 
     test "validates email and password when given" do
       {:error, changeset} = Accounts.register_user(%{email: "not valid", password: "not valid"})
@@ -92,6 +93,17 @@ defmodule Kg.AccountsTest do
       assert is_nil(user.password)
     end
 
+
+    test "registers users with a first and last name" do
+      email = unique_user_email()
+      first_name = "Tim"
+      last_name = "Doyle"
+      {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password(), first_name: first_name, last_name: last_name})
+      assert user.email == email
+      assert user.first_name == first_name
+      assert user.last_name == last_name
+    end
+
     test "registers users with an address" do
       email = unique_user_email()
       address = "38 Falconers Way"
@@ -102,7 +114,6 @@ defmodule Kg.AccountsTest do
       assert is_nil(user.confirmed_at)
       assert is_nil(user.password)
     end
-  end
 
   describe "make_admin_user/1" do
     test "changes a customers role to administrator" do

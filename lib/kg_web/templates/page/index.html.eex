@@ -15,19 +15,61 @@
       <div class="services-row">
         <img class="img-eggs" src="/images/eggs-2.jpg">
         <h3 class="service-heading-eggs">Farm Fresh Eggs</h3>
-        <p class="service-desc-eggs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Malesuada pellentesque elit eget gravida cum sociis. Ligula ullamcorper malesuada proin libero nunc. Id eu nisl nunc mi ipsum faucibus.</p>
+        <p class="service-desc-eggs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar.
+          Malesuada pellentesque elit eget gravida cum sociis. Ligula ullamcorper malesuada proin libero nunc. Id eu
+          nisl nunc mi ipsum faucibus.</p>
       </div>
       <div class="services-row">
         <img class="img-camp" src="/images/camp-1.jpg">
         <h3 class="service-heading-camp">Camp</h3>
-        <p class="service-desc-camp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet nec ullamcorper sit amet risus nullam eget felis eget. Lorem ipsum dolor sit amet. Ornare massa eget egestas purus viverra. Massa id neque aliquam vestibulum morbi blandit cursus risus at.</p>
+        <p class="service-desc-camp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Aliquet nec ullamcorper sit amet risus nullam eget felis eget.
+          Lorem ipsum dolor sit amet. Ornare massa eget egestas purus viverra. Massa id neque aliquam vestibulum morbi
+          blandit cursus risus at.</p>
       </div>
       <div class="services-row">
         <img class="img-cattle" src="/images/cattle-3.jpg">
         <h3 class="service-heading-cattle">Cattle</h3>
-        <p class="service-desc-cattle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam. Etiam erat velit scelerisque in dictum non consectetur a erat. A cras semper auctor neque vitae tempus quam pellentesque nec. Odio ut enim blandit volutpat maecenas.</p>
+        <p class="service-desc-cattle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam. Etiam erat velit scelerisque in
+          dictum non consectetur a erat. A cras semper auctor neque vitae tempus quam pellentesque nec. Odio ut enim
+          blandit volutpat maecenas.</p>
       </div>
 
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="testimonials container-fluid">
+      <h2>What People Say</h2>
+      <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h4>"Slide tapper backstop batting average defensive indifference airmail starter visitors baltimore chop.
+              Bases loaded knuckleball foul line tag diamond stadium batter's box all-star fielder's choice. Bat flyout
+              inning sabremetrics on deck base on balls choke up."</h4>
+            <em>- Bridget C.</em>
+          </div>
+          <div class="carousel-item">
+            <h4>"Take fenway disabled list visitors hack balk grounder dodgers out. Cracker jack nubber hitter arm
+              triple-A, designated hitter sacrifice bunt. Loss center fielder around the horn shortstop plate ground
+              rule double first base."</h4>
+            <em>- John F.</em>
+          </div>
+          <div class="carousel-item">
+            <h4>"Designated hitter rubber season warning track plate pinch hitter hall of fame. Gold glove defensive
+              indifference inning inside interleague mustard ground rule double dodgers appeal."</h4>
+            <em>- Shelby J.</em>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -47,8 +89,8 @@
                   <li>Harvested fresh daily</li>
                   <li>USDA certified Grade A</li>
                 </ul>
+                <%= link "Place Order", to: Routes.egg_order_path(@conn, :index), class: "btn btn-dark cta__button" %>
               </div>
-              <%= link "Place Order", to: Routes.egg_order_path(@conn, :index), class: "btn btn-dark cta__button" %>
             </div>
           </div>
         </div>
@@ -64,8 +106,8 @@
                   <li>Premmium Angus</li>
                   <li>Butchered humanely</li>
                 </ul>
+                <button class="btn btn-dark cta__button">Place Order</button>
               </div>
-              <button class="btn btn-dark cta__button">Place Order</button>
             </div>
           </div>
         </div>
@@ -81,8 +123,8 @@
                   <li>Squirted fresh daily</li>
                   <li>100% organic heifer breast milk</li>
                 </ul>
+                <button class="btn btn-dark cta__button">Place Order</button>
               </div>
-              <button class="btn btn-dark cta__button">Place Order</button>
             </div>
           </div>
         </div>
@@ -90,4 +132,11 @@
       </div>
     </div>
   </section>
+
+  <section id="footer">
+    <div class="footer">
+      <h6 class="copyright">© 2021 by KG Ranch</h6>
+    </div>
+  </section>
+
 </div>
