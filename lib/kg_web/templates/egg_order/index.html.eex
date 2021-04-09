@@ -1,66 +1,91 @@
-<h1>Your Orders</h1>
+<section id="orders">
 
-<div>
-<h2>Pending</h2>
+  <div class="page-title">
+    <h1>Your Orders</h1>
+  </div>
 
-<table class = "table">
-  <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Delivery?</th>
-      <th>Paid at</th>
-      <th>Completed at</th>
-      <th>Modify Order</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for egg_order <- pending_egg_orders(@egg_orders) do %>
-    <tr>
-      <td><%= egg_order.quantity %></td>
-      <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
-      <td><%= egg_order.paid_at %></td>
-      <td><%= egg_order.completed_at %></td>
+  <div class="order-buttons">
+    <%= link "New Egg order", to: Routes.egg_order_path(@conn, :new), class: "btn btn-primary new-order-btn" %>
+  </div>
 
-      <td>
-        <span><%= link raw(~s' <i class="fa fa-edit"></i>'), to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
-        <span><%= link raw(~s' <i class="fa fa-trash"></i>'),  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-</div>
+  <div class="container-fluid tables-container ">
 
+    <h2 class="table-title">Pending</h2>
+    <div class="table-responsive pending-container">
+      <table class="table table-striped order-tbl order-tbl-pending">
+        <thead class="thead-dark">
+          <tr>
+            <th>Quantity</th>
+            <th>Delivery?</th>
+            <th>Paid at</th>
+            <th>Completed at</th>
+            <th class="aaaa">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for egg_order <- pending_egg_orders(@egg_orders) do %>
+          <tr>
+            <td><%= egg_order.quantity %></td>
+            <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
+            <td><%= egg_order.paid_at %></td>
+            <td><%= egg_order.completed_at %></td>
+            <td>
+              <div class="dropdown ml-auto nav-account-menu">
+                <button class="btn btn-secondary dropdown user-menu-button" type="button" id="navUserDropdown"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-edit user-menu-icon"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navUserDropdown">
+                  <h6 class="dropdown-header">Actions</h6>
+                  <div class="dropdown-divider"></div>
+                  <%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order), class: "dropdown-item" %>
+                  <%= link "Delete",  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"], class: "dropdown-item" %>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
-<div>
-<h2>Completed</h2>
+    <h2 class="table-title">Completed</h2>
+    <div class="table-responsive completed-container">
+      <table class="table table-striped order-tbl order-tbl-completed">
+        <thead class="thead-dark">
+          <tr>
+            <th>Quantity</th>
+            <th>Delivery?</th>
+            <th>Paid at</th>
+            <th>Completed at</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for egg_order <- completed_egg_orders(@egg_orders) do %>
+          <tr>
+            <td><%= egg_order.quantity %></td>
+            <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
+            <td><%= egg_order.paid_at %></td>
+            <td><%= egg_order.completed_at %></td>
+            <td>
+              <div class="dropdown ml-auto nav-account-menu">
+                <button class="btn btn-secondary dropdown user-menu-button" type="button" id="navUserDropdown"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-edit user-menu-icon"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navUserDropdown">
+                  <h6 class="dropdown-header">Actions</h6>
+                  <div class="dropdown-divider"></div>
+                  <%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order), class: "dropdown-item" %>
+                  <%= link "Delete",  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"], class: "dropdown-item" %>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<table class = "table">
-  <thead>
-    <tr>
-      <th>Quantity</th>
-      <th>Delivery?</th>
-      <th>Paid at</th>
-      <th>Completed at</th>
-      <th>Modify Order</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for egg_order <- completed_egg_orders(@egg_orders) do %>
-    <tr>
-      <td><%= egg_order.quantity %></td>
-      <td><%= if egg_order.is_delivery do %> <i class="fas fa-check"></i> <% end %> </td>
-      <td><%= egg_order.paid_at %></td>
-      <td><%= egg_order.completed_at %></td>
-
-      <td>
-        <span><%= link raw(~s' <i class="fa fa-edit"></i>'), to: Routes.egg_order_path(@conn, :edit, egg_order) %></span>
-        <span><%= link raw(~s' <i class="fa fa-trash"></i>'),  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-</div>
-
-<%= link "New Egg order", to: Routes.egg_order_path(@conn, :new), class: "btn btn-primary" %>
+</section>
