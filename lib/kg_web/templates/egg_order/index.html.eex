@@ -19,7 +19,7 @@
             <th>Delivery?</th>
             <th>Paid at</th>
             <th>Completed at</th>
-            <th class="aaaa">Actions</th>
+            <th class="actions-heading">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
                   <i class="fa fa-edit user-menu-icon"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navUserDropdown">
-                  <h6 class="dropdown-header">Actions</h6>
+                  <h6 class="dropdown-header">Order Actions</h6>
                   <div class="dropdown-divider"></div>
                   <%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order), class: "dropdown-item" %>
                   <%= link "Delete",  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"], class: "dropdown-item" %>
@@ -58,6 +58,7 @@
             <th>Delivery?</th>
             <th>Paid at</th>
             <th>Completed at</th>
+            <th class="actions-heading">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -74,7 +75,7 @@
                   <i class="fa fa-edit user-menu-icon"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navUserDropdown">
-                  <h6 class="dropdown-header">Actions</h6>
+                  <h6 class="dropdown-header">Order Actions</h6>
                   <div class="dropdown-divider"></div>
                   <%= link "Edit", to: Routes.egg_order_path(@conn, :edit, egg_order), class: "dropdown-item" %>
                   <%= link "Delete",  to: Routes.egg_order_path(@conn, :delete, egg_order), method: :delete, data: [confirm: "Are you sure?"], class: "dropdown-item" %>
