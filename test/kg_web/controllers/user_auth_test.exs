@@ -178,7 +178,12 @@ defmodule KgWeb.UserAuthTest do
     end
 
     test "redirects if user is an authenticated non-admin", %{conn: conn, user: user} do
-      conn = conn |> assign(:current_user, user) |> fetch_flash() |> UserAuth.require_authenticated_admin_user([])
+      conn =
+        conn
+        |> assign(:current_user, user)
+        |> fetch_flash()
+        |> UserAuth.require_authenticated_admin_user([])
+
       assert conn.halted
       assert redirected_to(conn) == Routes.user_session_path(conn, :new)
       assert get_flash(conn, :error) == "You must be an admin"
