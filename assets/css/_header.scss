@@ -1,0 +1,128 @@
+// Navbar
+
+.navbar {
+    padding: 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 0rem 1rem;
+    } 
+}
+
+.navbar-container {
+    padding: 0.2rem 2.7rem;
+    margin: 0;
+    background-color: $theme-c;
+
+    @include media-breakpoint-down(md) {
+        padding: 0.2rem 1rem;
+    } 
+}
+
+.desktop-nav {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row-reverse;
+    position: relative;
+    width: 100%;
+}
+
+.navbar-nav {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    @include media-breakpoint-down(md) {
+        margin: 0 1rem;
+    } 
+}
+
+.brand-logo {
+    height: 5rem;
+    
+    @include media-breakpoint-down(md) {
+        height: 3rem;;
+        // position: relative;
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: $theme-h;
+    font-size: 1.1rem;
+    margin-left: 2rem;
+}
+
+
+
+// Modal menu
+
+.modal-content {
+    width: 100%;
+    height: auto;
+    border-radius: 4rem;
+    opacity: 94%;
+}
+
+.modal-header {
+    // border-bottom: none;
+    border-color: $theme-f;
+    background-color: $theme-b;
+}
+
+.modal-nav-body {
+    margin-top: 0; 
+    background-color: $theme-b;
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+}
+
+.modal-nav-body ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.modal-nav-body ul li {
+    text-align: center;
+    font-size: 130%;
+    padding: 8px;
+    text-transform: uppercase;
+
+    a {
+        color: white;
+    }
+}
+
+.icon-modal-close {
+    color: white;
+}
+
+
+
+// User dropdown menu
+
+.user-menu-button {
+    border-radius: 50%;
+    margin-left: 40px;
+}
+
+
+.dropdown-header {
+    font-size: 1rem;
+    // text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.dropdown-item {
+    color: $theme-c;
+
+    @include media-breakpoint-down(md) {
+        padding: 1rem 1.5rem;
+    }
+}

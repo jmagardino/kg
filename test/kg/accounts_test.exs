@@ -58,62 +58,72 @@ defmodule Kg.AccountsTest do
     end
   end
 
-    test "validates email and password when given" do
-      {:error, changeset} = Accounts.register_user(%{email: "not valid", password: "not valid"})
+  test "validates email and password when given" do
+    {:error, changeset} = Accounts.register_user(%{email: "not valid", password: "not valid"})
 
-      assert %{
-               email: ["must have the @ sign and no spaces"],
-               password: ["should be at least 12 character(s)"]
-             } = errors_on(changeset)
-    end
+    assert %{
+             email: ["must have the @ sign and no spaces"],
+             password: ["should be at least 12 character(s)"]
+           } = errors_on(changeset)
+  end
 
-    test "validates maximum values for email and password for security" do
-      too_long = String.duplicate("db", 100)
-      {:error, changeset} = Accounts.register_user(%{email: too_long, password: too_long})
-      assert "should be at most 160 character(s)" in errors_on(changeset).email
-      assert "should be at most 80 character(s)" in errors_on(changeset).password
-    end
+  test "validates maximum values for email and password for security" do
+    too_long = String.duplicate("db", 100)
+    {:error, changeset} = Accounts.register_user(%{email: too_long, password: too_long})
+    assert "should be at most 160 character(s)" in errors_on(changeset).email
+    assert "should be at most 80 character(s)" in errors_on(changeset).password
+  end
 
-    test "validates email uniqueness" do
-      %{email: email} = user_fixture()
-      {:error, changeset} = Accounts.register_user(%{email: email})
-      assert "has already been taken" in errors_on(changeset).email
+  test "validates email uniqueness" do
+    %{email: email} = user_fixture()
+    {:error, changeset} = Accounts.register_user(%{email: email})
+    assert "has already been taken" in errors_on(changeset).email
 
-      # Now try with the upper cased email too, to check that email case is ignored.
-      {:error, changeset} = Accounts.register_user(%{email: String.upcase(email)})
-      assert "has already been taken" in errors_on(changeset).email
-    end
+    # Now try with the upper cased email too, to check that email case is ignored.
+    {:error, changeset} = Accounts.register_user(%{email: String.upcase(email)})
+    assert "has already been taken" in errors_on(changeset).email
+  end
 
-    test "registers users with a hashed password" do
-      email = unique_user_email()
-      {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password()})
-      assert user.email == email
-      assert is_binary(user.hashed_password)
-      assert is_nil(user.confirmed_at)
-      assert is_nil(user.password)
-    end
+  test "registers users with a hashed password" do
+    email = unique_user_email()
+    {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password()})
+    assert user.email == email
+    assert is_binary(user.hashed_password)
+    assert is_nil(user.confirmed_at)
+    assert is_nil(user.password)
+  end
 
+  test "registers users with a first and last name" do
+    email = unique_user_email()
+    first_name = "Tim"
+    last_name = "Doyle"
 
-    test "registers users with a first and last name" do
-      email = unique_user_email()
-      first_name = "Tim"
-      last_name = "Doyle"
-      {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password(), first_name: first_name, last_name: last_name})
-      assert user.email == email
-      assert user.first_name == first_name
-      assert user.last_name == last_name
-    end
+    {:ok, user} =
+      Accounts.register_user(%{
+        email: email,
+        password: valid_user_password(),
+        first_name: first_name,
+        last_name: last_name
+      })
 
-    test "registers users with an address" do
-      email = unique_user_email()
-      address = "38 Falconers Way"
-      {:ok, user} = Accounts.register_user(%{email: email, password: valid_user_password(), address: address})
-      assert user.email == email
-      assert user.address == address
-      assert is_binary(user.hashed_password)
-      assert is_nil(user.confirmed_at)
-      assert is_nil(user.password)
-    end
+    assert user.email == email
+    assert user.first_name == first_name
+    assert user.last_name == last_name
+  end
+
+  test "registers users with an address" do
+    email = unique_user_email()
+    address = "38 Falconers Way"
+
+    {:ok, user} =
+      Accounts.register_user(%{email: email, password: valid_user_password(), address: address})
+
+    assert user.email == email
+    assert user.address == address
+    assert is_binary(user.hashed_password)
+    assert is_nil(user.confirmed_at)
+    assert is_nil(user.password)
+  end
 
   describe "make_admin_user/1" do
     test "changes a customers role to administrator" do
