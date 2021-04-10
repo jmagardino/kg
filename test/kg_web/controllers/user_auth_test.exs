@@ -211,7 +211,7 @@ defmodule KgWeb.UserAuthTest do
     end
 
     test "does not redirect if user is an authenticated admin", %{conn: conn, user: user} do
-      user = Map.put(user, :roles, ["admin"])
+      user = Map.put(user, :roles, ["administrator"])
       conn = conn |> assign(:current_user, user) |> UserAuth.require_authenticated_admin_user([])
       refute conn.halted
       refute conn.status
