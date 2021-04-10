@@ -6,8 +6,18 @@ defmodule Kg.EggOrdersTest do
   describe "egg_orders" do
     alias Kg.EggOrders.EggOrder
 
-    @valid_attrs %{completed_at: ~N[2010-04-17 14:00:00], is_delivery: true, paid_at: ~N[2010-04-17 14:00:00], quantity: 42}
-    @update_attrs %{completed_at: ~N[2011-05-18 15:01:01], is_delivery: false, paid_at: ~N[2011-05-18 15:01:01], quantity: 43}
+    @valid_attrs %{
+      completed_at: ~N[2010-04-17 14:00:00],
+      is_delivery: true,
+      paid_at: ~N[2010-04-17 14:00:00],
+      quantity: 42
+    }
+    @update_attrs %{
+      completed_at: ~N[2011-05-18 15:01:01],
+      is_delivery: false,
+      paid_at: ~N[2011-05-18 15:01:01],
+      quantity: 43
+    }
     @invalid_attrs %{completed_at: nil, is_delivery: nil, paid_at: nil, quantity: nil}
     @user_attrs %{"email" => "test@test.com", "password" => "tester123456789"}
 
