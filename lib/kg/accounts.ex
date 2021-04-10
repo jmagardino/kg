@@ -366,6 +366,6 @@ defmodule Kg.Accounts do
     end
   end
 
-  def is_admin?(%User{roles: roles}), do: true
+  def is_admin?(%User{roles: roles}), do: "admin" in roles
   def is_admin?(_), do: false
 end
