@@ -3,8 +3,18 @@ defmodule KgWeb.EggOrderControllerTest do
 
   alias Kg.EggOrders
 
-  @create_attrs %{completed_at: ~N[2010-04-17 14:00:00], is_delivery: true, paid_at: ~N[2010-04-17 14:00:00], quantity: 42}
-  @update_attrs %{completed_at: ~N[2011-05-18 15:01:01], is_delivery: false, paid_at: ~N[2011-05-18 15:01:01], quantity: 43}
+  @create_attrs %{
+    completed_at: ~N[2010-04-17 14:00:00],
+    is_delivery: true,
+    paid_at: ~N[2010-04-17 14:00:00],
+    quantity: 42
+  }
+  @update_attrs %{
+    completed_at: ~N[2011-05-18 15:01:01],
+    is_delivery: false,
+    paid_at: ~N[2011-05-18 15:01:01],
+    quantity: 43
+  }
   @invalid_attrs %{completed_at: nil, is_delivery: nil, paid_at: nil, quantity: nil}
   @account_attrs %{email: "tester@tester.com", password: "password12345678"}
 
@@ -96,6 +106,7 @@ defmodule KgWeb.EggOrderControllerTest do
     test "deletes chosen egg_order", %{conn: conn, egg_order: egg_order} do
       conn = delete(conn, Routes.egg_order_path(conn, :delete, egg_order))
       assert redirected_to(conn) == Routes.egg_order_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.egg_order_path(conn, :show, egg_order))
       end
