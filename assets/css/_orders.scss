@@ -1,0 +1,47 @@
+#orders {
+    padding: 0 12%;
+    // background: $theme-f;
+
+    @include media-breakpoint-down(md) {
+        padding: 0 3%;
+    }
+}
+
+.page-title {
+    text-align: center;
+    padding: 2.8rem 2rem 2rem;
+
+    h1 {
+        color: $theme-c;
+    }
+}
+
+.tables-container {
+    text-align: center;
+    padding: 2.4rem 0;
+    color: $theme-b;
+    margin-bottom: 40px;
+}
+
+.table-title {
+    text-align: left;
+}
+
+.pending-container {
+    margin-bottom: 10%;
+}
+
+.table th {
+    padding: 0.25rem;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+// .table .thead-dark th.actions-heading {
+//     color: #343a40;
+// }
+
+
+
