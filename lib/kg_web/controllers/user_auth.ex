@@ -139,6 +139,20 @@ defmodule KgWeb.UserAuth do
     end
   end
 
+  def require_authenticated_admin_user(conn, _opts) do
+    with %Kg.Accounts.User{} <- conn.assigns[:current_user],
+         true <- Kg.Accounts.is_admin?(conn.assigns[:current_user]) do
+      conn
+    else
+      _ ->
+        conn
+        |> put_flash(:error, "You must be an admin")
+        |> maybe_store_return_to()
+        |> redirect(to: Routes.user_session_path(conn, :new))
+        |> halt()
+    end
+  end
+
   defp maybe_store_return_to(%{method: "GET"} = conn) do
     %{request_path: request_path, query_string: query_string} = conn
     return_to = if query_string == "", do: request_path, else: request_path <> "?" <> query_string

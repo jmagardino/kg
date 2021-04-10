@@ -365,4 +365,7 @@ defmodule Kg.Accounts do
       {:error, :user, changeset, _} -> {:error, changeset}
     end
   end
+
+  def is_admin?(%User{roles: roles}), do: true
+  def is_admin?(_), do: false
 end
