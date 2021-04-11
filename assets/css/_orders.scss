@@ -44,4 +44,26 @@
 // }
 
 
+// Actions Menu
+
+.btn-secondary.action-menu-button {
+    border: none;
+    background: none;
+    color: $theme-d;
+}
+
+
+.dropdown-header {
+    font-size: 1rem;
+    // text-align: center;
+    padding-bottom: 0.2rem;
+}
+
+.dropdown-item {
+    color: $theme-c;
+
+    @include media-breakpoint-down(md) {
+        padding: 0.2rem 1.5rem;
+    }
+}
 

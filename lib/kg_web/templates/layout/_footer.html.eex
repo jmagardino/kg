@@ -1,5 +1,7 @@
 <section id="footer">
-    <div class="footer">
-      <h6 class="copyright">© 2021 by KG Ranch</h6>
+    <div class="footer-container">
+        <div class="footer-copyright">
+            <h6 class="copyright">© 2021 by KG Ranch</h6>
+        </div>
     </div>
-  </section>
+</section>

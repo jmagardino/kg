@@ -1,8 +1,13 @@
 // Footer Section
 
-.footer {
+.footer-container {
     text-align: center;
     padding: 0.7em;
+    background-color: $theme-h;
+}
+
+.footer-copyright {
+    vertical-align: bottom;
 }
 
 .copyright {
