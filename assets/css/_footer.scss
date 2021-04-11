@@ -2,11 +2,12 @@
 
 .footer-container {
     text-align: center;
-    padding: 0.4rem;
-    background-color: $theme-h;
+    padding: 0.8rem 0 0.4rem 0;
+    background-color: rgb(48, 48, 48);
+    color: white;
 
     @include media-breakpoint-down(sm) {
-        padding: 0.2rem;
+        padding: 0.4rem 0 0.2rem 0;
     }
 }
 
@@ -24,6 +25,7 @@
 // Links
 .footer-links {
     display: inline-block;
+    display: none;
 
     .footer-nav {
         @include media-breakpoint-down(sm) {
@@ -33,6 +35,12 @@
 
     .footer-nav-link {
         padding: 0.5rem 2rem;
+        color: white;
+
+        &:hover {
+            color: $theme-g;
+        }
+
         @include media-breakpoint-down(sm) {
 
         }
@@ -57,6 +65,11 @@
 
 .social-link {
     padding: 0.8rem;
+    color: white;
+
+    &:hover {
+        color: $theme-g;
+    }
 
     @include media-breakpoint-down(sm) {
         padding: 0 1.4rem;
