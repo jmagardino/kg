@@ -25,5 +25,8 @@
       <%= @inner_content %>
     </main>
     <script src="<%= Routes.static_path(@conn, "/js/animations.js") %>"></script>
+    <footer>
+      <%= render "_footer.html", assigns %>
+    </footer>
   </body>
 </html>
