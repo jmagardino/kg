@@ -15,10 +15,10 @@
     <!-- Scripts -->
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <header>
-    <%= render "_nav_bar.html", assigns %>
-  </header>
   <body>
+    <header>
+      <%= render "_nav_bar.html", assigns %>
+    </header>
     <main role="main" class="">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
