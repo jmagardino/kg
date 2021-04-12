@@ -140,3 +140,5 @@
   </section>
 
 </div>
+
+<script src="<%= Routes.static_path(@conn, "/js/animations.js") %>"></script>
