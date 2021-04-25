@@ -1,4 +1,4 @@
-alert("test");
+
 function carouselNormalization() {
     var items = $('#testimonial-carousel .carousel-item'), //grab all slides
         heights = [], //create empty array to store height values

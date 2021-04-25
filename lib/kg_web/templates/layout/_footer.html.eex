@@ -1,0 +1,24 @@
+<section id="footer">
+    <div class="footer-container">
+        <div class="footer-cta">
+            <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "footer-cta-btn" %>
+        </div>
+        <div class="footer-links">
+            <ul class="nav footer-nav">
+                <li><%= link "Eggs", to: Routes.egg_order_path(@conn, :index), class: "nav-item nav-link footer-nav-link" %></li>
+                <li class="nav-item nav-link nav-spacer">|</li>
+                <li><a class="nav-item nav-link footer-nav-link" href="#">Camp</a></li>
+                <li class="nav-item nav-link nav-spacer">|</li>
+                <li><a class="nav-item nav-link footer-nav-link" href="#">Cattle</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <a class="social-link" href="#"><i class="fab fa-facebook social-icon"></i></a>
+            <a class="social-link" href="#"><i class="fab fa-instagram social-icon"></i></a>
+            <a class="social-link" href="#"><i class="fab fa-twitter social-icon"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <h6 class="copyright">© 2021 by KG Ranch</h6>
+        </div>
+    </div>
+</section>
