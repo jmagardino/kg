@@ -517,4 +517,20 @@ defmodule Kg.AccountsTest do
       refute inspect(%User{password: "123456"}) =~ "password: \"123456\""
     end
   end
+
+  describe "is_admin/2" do
+    test "returns true for admin user" do
+      user = user_fixture()
+
+      {:ok, user} = Accounts.make_admin_user(user)
+
+      assert Accounts.is_admin?(user)
+    end
+
+    test "returns false for non admin user" do
+      user = user_fixture()
+
+      refute Accounts.is_admin?(user)
+    end
+  end
 end
