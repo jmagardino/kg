@@ -8,13 +8,12 @@ body {
     // background-attachment: fixed;
 }
 
-// .wrapper {
-//     // width: 100%;
-//     // padding: 0 10%;
-//     // background-image: url("/images/landscape-1.jpg");
-//     // background-repeat: no-repeat;
-//     // background-position: center;
-//     // background-size: cover;
-//     // background-attachment: fixed;
-// }
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
+main {
+    flex-grow: 1;
+}

@@ -168,4 +168,58 @@ defmodule KgWeb.UserAuthTest do
       refute conn.status
     end
   end
+
+  describe "require_authenticated_admin_user/2" do
+    test "redirects if user is not authenticated", %{conn: conn} do
+      conn = conn |> fetch_flash() |> UserAuth.require_authenticated_admin_user([])
+      assert conn.halted
+      assert redirected_to(conn) == Routes.user_session_path(conn, :new)
+      assert get_flash(conn, :error) == "You must be an admin"
+    end
+
+    test "redirects if user is an authenticated non-admin", %{conn: conn, user: user} do
+      conn =
+        conn
+        |> assign(:current_user, user)
+        |> fetch_flash()
+        |> UserAuth.require_authenticated_admin_user([])
+
+      assert conn.halted
+      assert redirected_to(conn) == Routes.user_session_path(conn, :new)
+      assert get_flash(conn, :error) == "You must be an admin"
+    end
+
+    test "stores the path to redirect to on GET", %{conn: conn} do
+      halted_conn =
+        %{conn | request_path: "/foo", query_string: ""}
+        |> fetch_flash()
+        |> UserAuth.require_authenticated_admin_user([])
+
+      assert halted_conn.halted
+      assert get_session(halted_conn, :user_return_to) == "/foo"
+
+      halted_conn =
+        %{conn | request_path: "/foo", query_string: "bar=baz"}
+        |> fetch_flash()
+        |> UserAuth.require_authenticated_admin_user([])
+
+      assert halted_conn.halted
+      assert get_session(halted_conn, :user_return_to) == "/foo?bar=baz"
+
+      halted_conn =
+        %{conn | request_path: "/foo?bar", method: "POST"}
+        |> fetch_flash()
+        |> UserAuth.require_authenticated_admin_user([])
+
+      assert halted_conn.halted
+      refute get_session(halted_conn, :user_return_to)
+    end
+
+    test "does not redirect if user is an authenticated admin", %{conn: conn, user: user} do
+      user = Map.put(user, :roles, ["administrator"])
+      conn = conn |> assign(:current_user, user) |> UserAuth.require_authenticated_admin_user([])
+      refute conn.halted
+      refute conn.status
+    end
+  end
 end

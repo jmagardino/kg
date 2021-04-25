@@ -76,4 +76,10 @@ defmodule KgWeb.Router do
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :confirm
   end
+
+  scope "/admin", KgWeb do
+    pipe_through [:browser, :require_authenticated_admin_user]
+
+    get "/", AdminPageController, :index
+  end
 end

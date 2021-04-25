@@ -3,6 +3,7 @@ defmodule KgWeb.UserAuth do
   import Phoenix.Controller
 
   alias Kg.Accounts
+  alias Kg.Accounts.User
   alias KgWeb.Router.Helpers, as: Routes
 
   # Make the remember me cookie valid for 60 days.
@@ -136,6 +137,20 @@ defmodule KgWeb.UserAuth do
       |> maybe_store_return_to()
       |> redirect(to: Routes.user_session_path(conn, :new))
       |> halt()
+    end
+  end
+
+  def require_authenticated_admin_user(conn, _opts) do
+    with %User{} <- conn.assigns[:current_user],
+         true <- Accounts.is_admin?(conn.assigns[:current_user]) do
+      conn
+    else
+      _ ->
+        conn
+        |> put_flash(:error, "You must be an admin")
+        |> maybe_store_return_to()
+        |> redirect(to: Routes.user_session_path(conn, :new))
+        |> halt()
     end
   end
 

@@ -132,13 +132,6 @@
       </div>
     </div>
   </section>
-
-  <section id="footer">
-    <div class="footer">
-      <h6 class="copyright">© 2021 by KG Ranch</h6>
-    </div>
-  </section>
-
 </div>
 
 <script src="<%= Routes.static_path(@conn, "/js/animations.js") %>"></script>
