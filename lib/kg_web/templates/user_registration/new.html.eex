@@ -11,28 +11,28 @@
     </div>
 
     <div class="form-label-group">
-      <%= text_input f, :first_name, class: "form-control", placeholder: "First name", required: true, autofocus: true %>
-      <%= label f, :first_name, "First name", class: "control-label" %>
+      <%= text_input f, :first_name, id: "firstName", class: "form-control", placeholder: "First name", required: true, autofocus: true %>
+      <%= label f, :first_name, "First name", for: "firstName", class: "control-label" %>
     </div>
 
     <div class="form-label-group">
-      <%= text_input f, :last_name, class: "form-control", placeholder: "Last name", required: true%>
-      <%= label f, :last_name, "Last name", class: "control-label" %>
+      <%= text_input f, :last_name, id: "lastName", class: "form-control", placeholder: "Last name", required: true%>
+      <%= label f, :last_name, "Last name", for: "lastName", class: "control-label" %>
     </div>
 
     <div class="form-label-group">
-      <%= text_input f, :email, class: "form-control", placeholder: "Email address", required: true%>
-      <%= label f, :email, "Email address", class: "control-label" %>
+      <%= text_input f, :email, id: "email", class: "form-control", placeholder: "Email", required: true%>
+      <%= label f, :email, "Email", for: "email", class: "control-label" %>
     </div>
 
     <div class="form-label-group">
-      <%= password_input f, :password, class: "form-control", placeholder: "Password", required: true %>
-      <%= label f, :password, class: "control-label" %>
+      <%= password_input f, :password, id: "password", class: "form-control", placeholder: "Password", required: true %>
+      <%= label f, :password, for: "password", class: "control-label" %>
     </div>
 
      <div class="form-label-group">
-      <%= text_input f, :address, class: "form-control", placeholder: "Address", required: false%>
-      <%= label f, :address, "Address", class: "control-label" %>
+      <%= text_input f, :address, id: "address", class: "form-control", placeholder: "Address", required: false%>
+      <%= label f, :address, "Address", for: "address", class: "control-label" %>
     </div>
 
     <%= error_tag f, :last_name %>
