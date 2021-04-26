@@ -7,11 +7,12 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 2rem;
+    padding: 2rem 0 0 0;
 }
 
 .welcome {
     margin: 5rem 0 7rem 0;
+    padding: 0 2rem;
 
     @include media-breakpoint-down(md) {
         margin: 1rem 0 0.25rem 0;
@@ -35,13 +36,96 @@
 
         p {
             font-family: "Varela Round", sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             color: white;
 
             @include media-breakpoint-down(sm) {
                 font-size: 1rem;
             }
         }
+    }
+}
+
+// Feature 
+.feature {
+    padding: 4rem 2rem;
+    background-color: rgba(255, 255, 255, 0.81);
+    color: $theme-a;
+    text-align: center;
+
+    &-heading {
+        font-size: 1.8rem;
+        color: black;
+        -webkit-text-fill-color: rgb(0, 0, 0);
+        // -webkit-text-stroke: 0.1rem $theme-g;
+        text-shadow: 0 0 0.1rem $theme-d;
+    }
+}
+
+.feature-sale-flyer {
+    width: 40%;
+    // display: block;
+}
+
+.feature-button {
+    margin: 1.75rem 0.5rem 0.2rem;
+    text-align: center;
+    // display: block;
+}
+
+
+
+// About Section
+
+#about {
+    background-color: $theme-h;
+    padding: 0.1rem 1rem 1rem 1rem;
+}
+
+.about {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    color: $theme-c;
+    padding-top: 3rem;
+    margin: 1rem 12% 4rem;
+
+    @include media-breakpoint-down(md) {
+        margin: 1rem auto 0.4rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 1rem;
+    }
+
+    h2 {
+        font-family: "Varela Round", sans-serif;
+        font-size: 2.35rem;
+        font-weight: 700;
+        margin-bottom: 3.2rem;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-img {
+        width: 70%;
+        margin-bottom: 4rem;
+
+        @include media-breakpoint-down(md) {
+            width: 80%;
+            margin-bottom: 2.8rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-bottom: 1.7rem;
+        }
+    }
+
+    &-blurb {
+        color: $theme-c;
     }
 }
 
@@ -304,18 +388,19 @@
 
 
 
-// Features Section
+// CTA Section
 
-#features {
+#cta {
     padding: 0 1rem;
     background-color: $theme-b;
 }
 
-.feature {
+.cta-container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     color: white;
     margin-bottom: 0;
+    padding-top: 2rem;
 
     h2 {
         font-family: "Varela Round", sans-serif;
@@ -332,10 +417,6 @@
     @include media-breakpoint-down(sm) {
         padding-top: 3rem;
     }
-}
-
-.cta {
-    padding-top: 2rem;
 
     @include media-breakpoint-down(sm) {
         padding-top: 1rem;
