@@ -45,5 +45,6 @@
   <% end %>
 </div>
 <div class="already_logged_in">
-  Already have an account?<%= link "Log in", to: Routes.user_session_path(@conn, :new) %>
+  <p>Already have an account?</p>
+  <%= link "Log in", to: Routes.user_session_path(@conn, :new) %>
 </div>

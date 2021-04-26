@@ -15,6 +15,15 @@
     justify-content: center;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    p {
+      margin: 0;
+      padding-right: 0.4rem;
+    }
+
+    a {
+      color: $theme-a;
+    }
 }
   
   .auth-form-wrapper {
