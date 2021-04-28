@@ -1,38 +1,50 @@
-<h1>Register</h1>
+<div class="auth-form-wrapper">
+  <%= form_for @changeset, Routes.user_registration_path(@conn, :create), [class: "form-signin"], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
 
-<%= form_for @changeset, Routes.user_registration_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
     </div>
+
+    <div class="form-label-group">
+      <%= text_input f, :first_name, id: "firstName", class: "form-control", placeholder: "First name", required: true, autofocus: true %>
+      <%= label f, :first_name, "First name", for: "firstName", class: "control-label" %>
+    </div>
+
+    <div class="form-label-group">
+      <%= text_input f, :last_name, id: "lastName", class: "form-control", placeholder: "Last name", required: true%>
+      <%= label f, :last_name, "Last name", for: "lastName", class: "control-label" %>
+    </div>
+
+    <div class="form-label-group">
+      <%= text_input f, :email, id: "email", class: "form-control", placeholder: "Email", required: true%>
+      <%= label f, :email, "Email", for: "email", class: "control-label" %>
+    </div>
+
+    <div class="form-label-group">
+      <%= password_input f, :password, id: "password", class: "form-control", placeholder: "Password", required: true %>
+      <%= label f, :password, for: "password", class: "control-label" %>
+    </div>
+
+     <div class="form-label-group">
+      <%= text_input f, :address, id: "address", class: "form-control", placeholder: "Address", required: false%>
+      <%= label f, :address, "Address", for: "address", class: "control-label" %>
+    </div>
+
+    <%= error_tag f, :last_name %>
+    <%= error_tag f, :email %>
+    <%= error_tag f, :address %>
+    <%= error_tag f, :first_name %>
+    <%= error_tag f, :password %>
+
+    <%= submit "Register", class: "btn btn-lg btn-primary btn-block" %>
   <% end %>
-
-  <%= label f, :first_name %>
-  <%= text_input f, :first_name, required: true %>
-  <%= error_tag f, :first_name %>
-
-  <%= label f, :last_name %>
-  <%= text_input f, :last_name, required: true %>
-  <%= error_tag f, :last_name %>
-
-  <%= label f, :email %>
-  <%= email_input f, :email, required: true %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :password %>
-  <%= password_input f, :password, required: true %>
-  <%= error_tag f, :password %>
-
-  <%= label f, :address %>
-  <%= text_input f, :address, required: false %>
-  <%= error_tag f, :address %>
-
-  <div>
-    <%= submit "Register" %>
-  </div>
-<% end %>
-
-<p>
-  <%= link "Log in", to: Routes.user_session_path(@conn, :new) %> |
-  <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new) %>
-</p>
+</div>
+<div class="already_logged_in">
+  <p>Already have an account?</p>
+  <%= link "Log in", to: Routes.user_session_path(@conn, :new) %>
+</div>
