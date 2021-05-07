@@ -1,0 +1,11 @@
+<div class = "cow-container">
+  <div class = "jumbotron cow-card">
+    <h1> <%= @cow.name %> </h1>
+    <p> Calved on: <%= @cow.calved_on %> </p>
+    <img src="https://cdn.britannica.com/39/76939-050-B787E5BF/bull-Black-Angus.jpg" class="img-fluid cow-image" alt="cow">
+  </div>
+
+  <div class = "cow-button-container">
+    <span><%= link "Back to cows", to: Routes.cow_path(@conn, :index), class: "btn btn-primary" %></span>
+  </div
+</div>

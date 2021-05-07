@@ -2,8 +2,8 @@
   <section id="title">
     <div class="welcome">
       <div class="welcome__banner">
-        <h1><%= gettext "Welcome to %{name}!", name: "KG Ranch" %></h1>
-        <p>A place to buy all of your eggs and check out our farm camp!</p>
+        <h1><%= gettext "%{name}", name: "KG Ranch" %></h1>
+        <p>Selling Quality in Quantity</p>
       </div>
     </div>
   </section>

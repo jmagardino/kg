@@ -1,0 +1,19 @@
+<section id="orders">
+
+  <div class="page-title">
+    <h1>Our Black Angus Cows</h1>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <%= for cow <- @cows do %>
+      <div class= "clickable-cow">
+        <h1> <%= cow.name %> </h1>
+        <p> Calved on: <%= cow.calved_on %> </p>
+        <img src="https://cdn.britannica.com/39/76939-050-B787E5BF/bull-Black-Angus.jpg" class="img-fluid cow-image" alt="cow">
+        <p> <%= link "Show", to: Routes.cow_path(@conn, :show, cow), class: "divLink" %> </p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
