@@ -1,0 +1,114 @@
+#cows {
+    padding: 0 12%;
+    // background: $theme-f;
+
+    @include media-breakpoint-down(md) {
+        padding: 0 3%;
+    }
+}
+
+.cow-container {
+    padding: 5rem
+}
+
+.cow-button-container {
+    position: relative;
+    width:200px;
+    left: 50%;
+    margin-left: -100px;
+    text-align:center;
+    padding: 10px;
+}
+
+.cow-button {
+    padding: 5rem;
+}
+
+.cow-card {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.cow {
+    margin-right: 40px;
+    margin-bottom: 40px;
+    background: #eee;
+    height: auto;
+    width: 300px;
+    border-radius: 25px;
+
+    h1 {
+        color: black;
+        padding: 1rem;
+    }
+
+    p {
+        color: black;
+        padding: .5rem
+    }
+
+    img {
+        padding-bottom: 50px;
+    }
+}
+
+div.clickable-cow {
+    margin-right: 40px;
+    margin-bottom: 40px;
+    background: #eee;
+    position: relative;
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    border-radius: 25px;
+
+    h1 {
+        color: black;
+        padding: .5rem;
+    }
+
+    p {
+        color: black;
+        padding: .5rem
+    }
+
+    img {
+        padding-bottom: .3rem;
+    }
+ }
+
+div.clickable:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+ }
+
+ a.divLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    /* Makes sure the link doesn't get underlined */
+    z-index: 10;
+    /* raises anchor tag above everything else in div */
+    background-color: white;
+    /*workaround to make clickable in IE */
+    opacity: 0;
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+ }
+
+
+.page-title {
+    text-align: center;
+    padding: 2.8rem 2rem 2rem;
+
+    h1 {
+        color: $theme-c;
+    }
+}
+

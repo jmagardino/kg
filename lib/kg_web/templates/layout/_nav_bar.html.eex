@@ -10,9 +10,8 @@
 
             <div class="navbar-nav">
                 <ul class="nav">
+                    <li><%= link "Cows", to: Routes.cow_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
                     <li><%= link "Eggs", to: Routes.egg_order_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
-                    <li><a class="nav-item nav-link nav-link-desktop" href="#">Camp</a></li>
-                    <li><a class="nav-item nav-link nav-link-desktop" href="#">Cattle</a></li>
                 </ul>
             </div>
 
