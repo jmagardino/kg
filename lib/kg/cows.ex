@@ -11,7 +11,7 @@ defmodule Kg.Cows do
   end
 
   def all_cows() do
-    query = from c in Cow
+    query = from(c in Cow)
     Repo.all(query)
   end
 

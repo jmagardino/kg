@@ -2,6 +2,7 @@ defmodule KgWeb.CowController do
   use KgWeb, :controller
 
   alias Kg.Cows
+
   def index(conn, _params) do
     cows = Cows.all_cows()
 
