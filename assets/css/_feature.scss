@@ -7,7 +7,7 @@
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 2rem;
+    padding: 5rem;
 }
 
 .welcome {
@@ -42,6 +42,10 @@
                 font-size: 1rem;
             }
         }
+
+        img {
+            width: 800px
+        }
     }
 }
 
@@ -58,8 +62,8 @@
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
     color: $theme-g;
-    padding-top: 3rem;
-    margin: 1rem 12% 4rem;
+    padding-top: 1rem;
+    margin: .3rem 5% .5rem;
 
     @include media-breakpoint-down(md) {
         margin: 1rem auto 0.4rem;
@@ -97,7 +101,6 @@
 .services-row {
     margin: auto;
     text-align: left;
-    padding: 3rem;
 
     @include media-breakpoint-down(sm) {
         text-align: center;
@@ -107,7 +110,7 @@
 
 .img-eggs {
     width: 14rem;
-    border-radius: 50%;
+    border-radius: 50%/50%;
     float: left;
     margin: 0 3rem 2rem 0;
 
@@ -188,7 +191,7 @@
 .service-desc-eggs {
     clear: left;
     line-height: 2;
-    margin: 0 40% 0 0;
+    margin: 0 20% 0 0;
 
     @include media-breakpoint-down(sm) {
         font-size: 0.8rem;
@@ -206,7 +209,7 @@
     clear: right;
     text-align: right;
     line-height: 2;
-    margin: 0 0 0 40%;
+    margin: 0 0 0 20%;
 
     @include media-breakpoint-down(sm) {
         font-size: 0.8rem;
@@ -223,7 +226,7 @@
 .service-desc-cattle {
     clear: left;
     line-height: 2;
-    margin: 0 40% 0 0;
+    margin: 0 20% 0 0;
 
     @include media-breakpoint-down(sm) {
         font-size: 0.8rem;

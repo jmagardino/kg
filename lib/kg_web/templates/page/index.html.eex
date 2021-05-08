@@ -2,19 +2,16 @@
   <section id="title">
     <div class="welcome">
       <div class="welcome__banner">
-        <h1><%= gettext "%{name}", name: "KG Ranch" %></h1>
-        <p>Selling Quality in Quantity</p>
+        <img src="<%= Routes.static_path(@conn, "/images/kg.svg") %>" alt="KG Ranch Logo" height="150">
       </div>
     </div>
   </section>
 
   <section id="services">
     <div class="services">
-      <h2>What We Offer</h2>
-
       <div class="services-row">
         <img class="img-eggs" src="/images/eggs-2.jpg">
-        <h3 class="service-heading-eggs">Farm Fresh Eggs</h3>
+        <h3 class="service-heading-eggs">Our Ranch</h3>
         <p class="service-desc-eggs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar.
           Malesuada pellentesque elit eget gravida cum sociis. Ligula ullamcorper malesuada proin libero nunc. Id eu
@@ -69,66 +66,6 @@
         <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon"></span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="features">
-    <div class="jumbotron container feature">
-      <h2>Get Started</h2>
-      <div class="row cta">
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-egg fa-lg icon"></i> Eggs</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Harvested fresh daily</li>
-                  <li>USDA certified Grade A</li>
-                </ul>
-                <%= link "Place Order", to: Routes.egg_order_path(@conn, :index), class: "btn btn-dark cta__button" %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-hamburger fa-lg icon"></i> Beef</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Premmium Angus</li>
-                  <li>Butchered humanely</li>
-                </ul>
-                <button class="btn btn-dark cta__button">Place Order</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-glass-whiskey fa-lg icon"></i> Milk</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Squirted fresh daily</li>
-                  <li>100% organic heifer breast milk</li>
-                </ul>
-                <button class="btn btn-dark cta__button">Place Order</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
