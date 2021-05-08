@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/">
-        <img class="brand-logo" src="<%= Routes.static_path(@conn, "/images/brand.png") %>" alt="KG Ranch Logo" height="100">
+            <img class="brand-logo" src="<%= Routes.static_path(@conn, "/images/brand.png") %>" alt="KG Ranch Logo" height="100">
         </a>
 
             <div class="navbar-nav">
