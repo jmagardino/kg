@@ -31,13 +31,9 @@
 }
 
 .navbar-nav {
-    padding-left: 5rem;
     flex-direction: row-reverse;
-    position: fixed;
     width: 100%;
-}
 
-.navbar-nav {
     @include media-breakpoint-down(md) {
         display: none;
     }
@@ -54,7 +50,7 @@
     
     @include media-breakpoint-down(md) {
         height: 3rem;
-        position: fixed;
+        // position: fixed;
     }
 }
 

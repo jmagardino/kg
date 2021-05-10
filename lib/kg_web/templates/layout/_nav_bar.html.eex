@@ -10,7 +10,7 @@
 
             <div class="navbar-nav">
                 <ul class="nav">
-                    <li class = "nav-item"><%= link "Cows", to: Routes.cow_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
+                    <li><%= link "Cows", to: Routes.cow_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
                 </ul>
             </div>
 
