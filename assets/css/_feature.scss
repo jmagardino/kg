@@ -6,7 +6,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     padding: 2rem;
 }
 
@@ -47,6 +46,8 @@
             width: 24rem;
             height: auto;
             position: relative;
+            max-width: 30vw;
+            bottom: 5vw;
 
             @include media-breakpoint-down(md) {
                 width: 60%;
