@@ -2,7 +2,7 @@
 
 .navbar {
     padding: 0;
-
+    z-index: 9999;
     @include media-breakpoint-down(md) {
         padding: 0rem 1rem;
     } 
@@ -24,13 +24,16 @@
     }
 }
 
-.navbar-expand-lg .navbar-nav {
+.navbar-expand-lg {
     flex-direction: row-reverse;
-    position: relative;
+    // position: fixed;
     width: 100%;
 }
 
 .navbar-nav {
+    flex-direction: row-reverse;
+    width: 100%;
+
     @include media-breakpoint-down(md) {
         display: none;
     }
@@ -46,8 +49,8 @@
     height: 5rem;
     
     @include media-breakpoint-down(md) {
-        height: 3rem;;
-        // position: relative;
+        height: 3rem;
+        // position: fixed;
     }
 }
 
