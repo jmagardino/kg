@@ -1,1 +1,14 @@
-HELLO ADMIN
+<div class="container">
+    <div class="admin-actions">
+        <div class="jumbotron">
+        <h1 class="display-4">Owner Actions</h1>
+        <p class="lead">This is an area for an owner of the website to perform special operations.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <%= link "Add Cows", to: Routes.cow_path(@conn, :new), class: "btn btn-primary btn-lg" %>
+        </p>
+        </div>
+    </div>
+</div>
+
+<script src="<%= Routes.static_path(@conn, "/js/animations.js") %>"></script>

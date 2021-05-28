@@ -15,5 +15,9 @@ defmodule Kg.Cows do
     Repo.all(query)
   end
 
+  def change_cow(%Cow{} = cow, attrs \\ %{}) do
+    Cow.changeset(cow, attrs)
+  end
+
   def get_cow!(id), do: Repo.get!(Cow, id)
 end
