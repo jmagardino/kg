@@ -78,6 +78,9 @@ defmodule KgWeb.Router do
 
     get "/cows", CowController, :index
     get "/cows/:id", CowController, :show
+
+    get "/sales", SaleController, :index
+    get "/sales/:id", SaleController, :show
   end
 
   scope "/admin", KgWeb do

@@ -1,0 +1,4 @@
+<div>
+    <h1> <%= @sale.name %> </h1>
+    <p> Calved on: <%= @sale.sale_date %> </p>
+</div>
