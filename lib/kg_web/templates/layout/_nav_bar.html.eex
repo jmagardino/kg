@@ -11,6 +11,7 @@
             <div class="navbar-nav">
                 <ul class="nav">
                     <li><%= link "Cows", to: Routes.cow_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
+                    <li><%= link "Sales", to: Routes.sale_path(@conn, :index), class: "nav-item nav-link nav-link-desktop" %></li>
                 </ul>
             </div>
 

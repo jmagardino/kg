@@ -3,6 +3,8 @@ defmodule Kg.Repo.Migrations.CreateSalesTable do
 
   def change do
     create table(:sales) do
+      add :name, :string
+      add :sale_date, :date
 
       timestamps()
     end
