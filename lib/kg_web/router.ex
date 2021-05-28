@@ -84,5 +84,7 @@ defmodule KgWeb.Router do
     pipe_through [:browser, :require_authenticated_admin_user]
 
     get "/", AdminPageController, :index
+    get "/cows", CowController, :new
+    post "/cows", CowController, :create
   end
 end
