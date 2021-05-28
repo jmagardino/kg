@@ -56,9 +56,6 @@ defmodule KgWeb.Router do
     post "/users/reset_password", UserResetPasswordController, :create
     get "/users/reset_password/:token", UserResetPasswordController, :edit
     put "/users/reset_password/:token", UserResetPasswordController, :update
-
-    get "/cows", CowController, :index
-    get "/cows/:id", CowController, :show
   end
 
   scope "/", KgWeb do
@@ -78,6 +75,9 @@ defmodule KgWeb.Router do
     get "/users/confirm", UserConfirmationController, :new
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :confirm
+
+    get "/cows", CowController, :index
+    get "/cows/:id", CowController, :show
   end
 
   scope "/admin", KgWeb do

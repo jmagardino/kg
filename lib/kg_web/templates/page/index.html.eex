@@ -2,39 +2,27 @@
   <section id="title">
     <div class="welcome">
       <div class="welcome__banner">
-        <h1><%= gettext "%{name}", name: "KG Ranch" %></h1>
-        <p>Selling Quality in Quantity</p>
+        <img src="<%= Routes.static_path(@conn, "/images/kg.svg") %>" alt="KG Ranch Logo" height="150">
       </div>
     </div>
   </section>
 
   <section id="services">
     <div class="services">
-      <h2>What We Offer</h2>
-
       <div class="services-row">
-        <img class="img-eggs" src="/images/eggs-2.jpg">
-        <h3 class="service-heading-eggs">Farm Fresh Eggs</h3>
-        <p class="service-desc-eggs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar.
-          Malesuada pellentesque elit eget gravida cum sociis. Ligula ullamcorper malesuada proin libero nunc. Id eu
-          nisl nunc mi ipsum faucibus.</p>
+        <img class="img-eggs" src="/images/ranchhq.jpg">
+        <h3 class="service-heading-eggs">Our Ranch</h3>
+        <p class="service-desc-eggs">Established in 1978, our headquarters are located southwest of the community of Three Forks along the Jefferson River. We currently run 1200 head of registered mother cows. We purchased our first registered Angus females in 1980 from Rollin' Rock Angus. The majority of the cow herd is KG ranch raised. The KG Ranch herd bull battery consists of bulls from Sitz Angus, Vermilion Ranch, Connealy Angus, Hinman Angus and KG Ranch. AI sires are matched based on environmental compatibility and proven genetics that we feel will enhance our breeding program.</p>
       </div>
       <div class="services-row">
-        <img class="img-camp" src="/images/camp-1.jpg">
-        <h3 class="service-heading-camp">Camp</h3>
-        <p class="service-desc-camp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Aliquet nec ullamcorper sit amet risus nullam eget felis eget.
-          Lorem ipsum dolor sit amet. Ornare massa eget egestas purus viverra. Massa id neque aliquam vestibulum morbi
-          blandit cursus risus at.</p>
+        <img class="img-camp" src="/images/auction.jpg">
+        <h3 class="service-heading-camp">Annual Production Sale</h3>
+        <p class="service-desc-camp">The first Friday each December, KG hosts its annual production sale, consisting of 300 Coming 2-year-old Bulls, 350 Commercial Bred Heifers & 50 Registered Cows. For more information on the upcoming sale, please visit our sales page.</p>
       </div>
       <div class="services-row">
-        <img class="img-cattle" src="/images/cattle-3.jpg">
-        <h3 class="service-heading-cattle">Cattle</h3>
-        <p class="service-desc-cattle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc id cursus metus aliquam. Etiam erat velit scelerisque in
-          dictum non consectetur a erat. A cras semper auctor neque vitae tempus quam pellentesque nec. Odio ut enim
-          blandit volutpat maecenas.</p>
+        <img class="img-cattle" src="/images/blackangus.jpeg">
+        <h3 class="service-heading-cattle">Philosophy</h3>
+        <p class="service-desc-cattle">KG Ranch is driven by a philosophy that would be more like a commercial cattlemen than most registered breeders. If our genetics won't work in a commercial environment then it has no place at the KG.</p>
       </div>
 
     </div>
@@ -46,21 +34,16 @@
       <div id="testimonial-carousel" class="carousel slide" data-ride="false">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h4>"Slide tapper backstop batting average defensive indifference airmail starter visitors baltimore chop.
-              Bases loaded knuckleball foul line tag diamond stadium batter's box all-star fielder's choice. Bat flyout
-              inning sabremetrics on deck base on balls choke up."</h4>
-            <em>- Bridget C.</em>
+            <h4>"The best darn cows I've ever raised!"</h4>
+            <em>- Joe Magardino(Head cowboy)</em>
           </div>
           <div class="carousel-item">
-            <h4>"Take fenway disabled list visitors hack balk grounder dodgers out. Cracker jack nubber hitter arm
-              triple-A, designated hitter sacrifice bunt. Loss center fielder around the horn shortstop plate ground
-              rule double first base."</h4>
-            <em>- John F.</em>
+            <h4>"Genetics that will impress..."</h4>
+            <em>- Kaitlyn Doddridge (Assistant to the head cowboy)</em>
           </div>
           <div class="carousel-item">
-            <h4>"Designated hitter rubber season warning track plate pinch hitter hall of fame. Gold glove defensive
-              indifference inning inside interleague mustard ground rule double dodgers appeal."</h4>
-            <em>- Shelby J.</em>
+            <h4>"Cattle genetics hand selected from my cow-genius"</h4>
+            <em>- Paul Doddridge (Owner)</em>
           </div>
         </div>
         <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
@@ -69,66 +52,6 @@
         <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon"></span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="features">
-    <div class="jumbotron container feature">
-      <h2>Get Started</h2>
-      <div class="row cta">
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-egg fa-lg icon"></i> Eggs</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Harvested fresh daily</li>
-                  <li>USDA certified Grade A</li>
-                </ul>
-                <%= link "Place Order", to: Routes.egg_order_path(@conn, :index), class: "btn btn-dark cta__button" %>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-hamburger fa-lg icon"></i> Beef</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Premmium Angus</li>
-                  <li>Butchered humanely</li>
-                </ul>
-                <button class="btn btn-dark cta__button">Place Order</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 cta__card">
-          <div class="card">
-            <div class="card-header cta__header">
-              <h3><i class="fas fa-glass-whiskey fa-lg icon"></i> Milk</h3>
-            </div>
-            <div class="card-body text-center">
-              <div class="cta__details">
-                <ul>
-                  <li>Squirted fresh daily</li>
-                  <li>100% organic heifer breast milk</li>
-                </ul>
-                <button class="btn btn-dark cta__button">Place Order</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
