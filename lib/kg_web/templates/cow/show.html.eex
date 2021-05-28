@@ -7,5 +7,5 @@
 
   <div class = "cow-button-container">
     <span><%= link "Back to cows", to: Routes.cow_path(@conn, :index), class: "btn btn-primary" %></span>
-  </div
+  </div>
 </div>
